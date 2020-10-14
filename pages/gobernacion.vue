@@ -1,12 +1,13 @@
 <template>
   <div>
     <NavBar />
-    <div>
+    <CandidateCardLoading v-if="$apollo.loading" />
+    <div v-else>
       <CandidateCard
         v-for="candidato in candidatoes"
         :key="candidato.id"
         :candidate-name="candidato.nombre"
-        :candidate-profile-pic="candidato.profile_img.url"
+        :candidate-profile-pic="candidato.profile_img.formats.thumbnail.url"
         :candidate-party="candidato.partido.partido_titulo"
         candidate-position="Candidata a la Gobernacion"
         :candidate-party-color="candidato.partido.id"
@@ -18,11 +19,13 @@
 <script>
 import NavBar from '../components/Navbar'
 import CandidateCard from '../components/CandidateCard'
+import CandidateCardLoading from '../components/CandidateCardLoading'
 import candidatosQuery from '../apollo/queries/candidatos/gobernadores.gql'
 
 export default {
   components: {
     CandidateCard,
+    CandidateCardLoading,
     NavBar,
   },
   data() {

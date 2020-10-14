@@ -3,6 +3,7 @@ query Candidatos {
         id
         nombre
         profile_img {
+            formats
             url
         } 
         partido {

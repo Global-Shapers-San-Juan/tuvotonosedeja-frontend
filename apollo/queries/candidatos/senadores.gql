@@ -3,6 +3,7 @@ query Senadores {
         id
         nombre
         profile_img {
+            formats
             url
         } 
         partido {

@@ -4,13 +4,13 @@
       <b-list-group-item class="d-flex align-items-center">
         <div class="row">
           <b-col cols="4">
+            <b-avatar v-if="$apollo.loading" class="mr-3" size="4em"></b-avatar>
             <b-avatar
-              v-if="candidateProfilePic"
+              v-else
               class="remove-bg"
               size="4.5em"
               :src="candidateProfilePic"
             ></b-avatar>
-            <b-avatar v-else class="mr-3" size="4em"></b-avatar>
           </b-col>
           <b-col cols="8" class="mr-auto nombre-title">
             <div class="row">
