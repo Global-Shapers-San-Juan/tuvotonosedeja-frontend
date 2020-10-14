@@ -1,0 +1,13 @@
+query Candidatos {
+    candidatoes(sort: "nombre:asc") {
+        id
+        nombre
+        profile_img {
+            url
+        } 
+        partido {
+            id
+            partido_titulo
+        }
+    }
+}

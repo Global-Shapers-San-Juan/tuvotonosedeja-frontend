@@ -1,0 +1,14 @@
+query Senadores {
+    senados(sort: "nombre:asc") {
+        id
+        nombre
+        profile_img {
+            url
+        } 
+        partido {
+            id
+            partido_titulo
+        }
+        puesto
+    }
+}

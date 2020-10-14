@@ -1,0 +1,12 @@
+query Candidato {
+    candidato(id: 1) {
+        id
+        nombre
+        profile_img {
+            url
+        } 
+        partido {
+            partido_titulo
+        }
+    }
+}
